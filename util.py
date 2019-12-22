@@ -1,6 +1,7 @@
 def create_dict(data):
-    id2name = {d['id']: d['name'] for d in data['users']}
-    name2id = {d['name']: d['id'] for d in data['users']}
+    print(data['users'][100])
+    id2name = {d['id']: d['profile']['display_name'] for d in data['users']}
+    name2id = {d['profile']['display_name']: d['id'] for d in data['users']}
     return id2name, name2id
 
 def create_name_list(model, id2name):
