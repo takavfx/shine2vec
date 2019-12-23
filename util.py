@@ -1,5 +1,4 @@
 def create_dict(data):
-    print(data['users'][100])
     id2name = {d['id']: d['profile']['display_name'] for d in data['users']}
     name2id = {d['profile']['display_name']: d['id'] for d in data['users']}
     return id2name, name2id
