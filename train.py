@@ -24,10 +24,11 @@ if __name__ == '__main__':
             messages = list(filter(lambda x: 'parent_user_id' not in x, messages))
             messages = list(filter(lambda x: 'subtype' not in x or x['subtype'] != 'bot_message', messages))
     
+            sentence = []
             for m in messages:
                 if not m.get('user'):
                     continue
-                sentence = m['user']
+                sentence.append(m['user'])
             sentence_list.append(sentence)
     
             for m in messages:
